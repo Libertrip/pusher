@@ -11,8 +11,8 @@ defmodule Pusher do
       event_body(event, data, channels, socket_id)
       |> JSX.encode!()
 
-    headers = %{"Content-type" => "application/json"}
-    response = HttpClient.post!("/apps/#{app_id()}/events", body, headers)
+    # headers = %{"Content-type" => "application/json"}
+    response = HttpClient.post!("/apps/#{app_id()}/events", body)
 
     if response_success?(response) do
       :ok
