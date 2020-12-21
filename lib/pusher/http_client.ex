@@ -25,6 +25,9 @@ defmodule Pusher.HttpClient do
       |> RequestSigner.sign_query_string(body, app_key(), secret(), method, path)
       |> URI.encode_query()
 
+    Logger.info(body)
+    Logger.info(headers)
+
     super(method, path <> "?" <> query_string, body, headers, options)
   end
 
