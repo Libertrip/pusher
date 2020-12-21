@@ -1,6 +1,7 @@
 defmodule Pusher.HttpClient do
   use HTTPoison.Base
   alias Pusher.RequestSigner
+  require Logger
 
   defp process_url(url), do: base_url() <> url
 
@@ -11,6 +12,7 @@ defmodule Pusher.HttpClient do
   end
 
   defp process_response_body(body) do
+    Logger.info(inspect(body))
     unless body == "", do: body |> JSX.decode!(), else: nil
   end
 

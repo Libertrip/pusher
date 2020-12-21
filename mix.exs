@@ -33,9 +33,9 @@ defmodule Pusher.Mixfile do
 
   defp deps do
     [
-      {:httpoison, "~> 1.0"},
-      {:signaturex, "~> 1.3.0"},
-      {:exjsx, "~> 4.0.0"},
+      {:httpoison, "~> 0.11.0"},
+      {:signaturex, "~> 1.0.0"},
+      {:exjsx, "~> 3.0"},
       {:mock, "~> 0.3.0", only: [:dev, :test]},
       {:ex_doc, "~> 0.16", only: :dev, runtime: false},
       {:earmark, ">= 1.2.3", only: :dev, runtime: false}
